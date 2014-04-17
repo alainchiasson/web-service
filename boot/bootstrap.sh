@@ -19,6 +19,10 @@ gem install chef ruby-shadow --no-ri --no-rdoc
 #init git
 yum install -y git-core
 
+# Install apche
+yum install -y httpd
+service httpd start
+
 #Create link to web directory
 if [ ! -h /var/www/html/www ] 
 then 
@@ -27,4 +31,4 @@ then
 fi
 
 # Touch flag 
-touch bootstrapped 
+touch /vagrant/bootstrapped 
